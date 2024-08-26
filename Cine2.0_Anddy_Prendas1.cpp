@@ -22,7 +22,7 @@ int main() {
 	Movie movie3("El Vicio Intenso 2", 2024, 104, "Estados Unidos", 8);
 	Movie movie4("Negranieves y Los 7 Esclavitos", 2019, 129, "Mexico", 10);
 	Movie moviesVector[] = { movie1,movie2,movie3,movie4 };
-	Movie newMoviesVector[10];
+	Movie newMoviesVector[9];
 
 	int infiniteWhileVariable = 1;
 	while (infiniteWhileVariable == 1) {
