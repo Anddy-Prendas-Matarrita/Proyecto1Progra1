@@ -23,3 +23,13 @@ std::string Schedule::getStartTime() {
 std::string Schedule::getEndTime() {
 	return endTime;
 }
+int Schedule::getRoomNum() {
+	int toReturn = selectedRoom.getNumber();
+	return toReturn;
+}
+std::string Schedule::getMovieName() {
+	return selectedMovie.getName();
+}
+int Schedule::getRoomPrice() {
+	return selectedRoom.getPrice();
+}

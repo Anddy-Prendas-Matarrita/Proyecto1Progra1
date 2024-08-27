@@ -23,5 +23,8 @@ public:
 	std::string getDate();
 	std::string getStartTime();
 	std::string getEndTime();
+	int getRoomNum();
+	std::string getMovieName();
+	int getRoomPrice();
 };
 #endif MOVIE_H

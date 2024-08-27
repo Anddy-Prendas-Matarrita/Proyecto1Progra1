@@ -13,6 +13,16 @@ void showMovieInfo(Movie movieS) {
 	std::cout << "\nPais: " << movieS.getCountry();
 	std::cout << "\nResena: " << movieS.getReview() << "/10";
 }
+void showRoomInfo(Room roomS) {
+	std::cout << "\n\n-Sala: " << roomS.getNumber();
+	std::cout << "\nTipo: " << roomS.getKind();
+	std::cout << "\nPrecio: " << roomS.getPrice() << " colones\n";
+}
+void showScheduleInfo(Schedule scheduleS) {
+	std::cout << "\n\n-Horario: " << scheduleS.getStartTime() << "-" << scheduleS.getEndTime();
+	std::cout << "\nSala: " << scheduleS.getRoomNum();
+	std::cout << "\nPrecio: " << scheduleS.getRoomPrice() << " colones\n";
+}
 
 int main() {
 	int count = 0;
@@ -23,6 +33,18 @@ int main() {
 	Movie movie4("Negranieves y Los 7 Esclavitos", 2019, 129, "Mexico", 10);
 	Movie moviesVector[] = { movie1,movie2,movie3,movie4 };
 	Movie newMoviesVector[10];
+	Room room1(1, 7000, "2D");
+	Room room2(2, 10000,"3D");
+	Room roomArray[] = { room1,room2 };
+	Schedule schedule1(movie1,room1,"20/06/2024","11:00 am","01:00 pm");
+	Schedule schedule2(movie2, room2, "20/06/2024", "01:00 am", "03:00 pm");
+	Schedule schedule3(movie3, room1, "20/06/2024", "03:00 am", "05:00 pm");
+	Schedule schedule4(movie4, room2, "20/06/2024", "05:00 am", "08:00 pm");
+	Schedule schedule5(movie3, room1, "21/06/2024", "11:00 am", "01:00 pm");
+	Schedule schedule6(movie1, room2, "21/06/2024", "01:00 am", "03:00 pm");
+	Schedule schedule7(movie2, room1, "21/06/2024", "03:00 am", "05:00 pm");
+	Schedule schedule8(movie3, room2, "21/06/2024", "05:00 am", "08:00 pm");
+	Schedule ScheduleArray[] = { schedule1,schedule2,schedule3,schedule4,schedule5,schedule6,schedule7,schedule8 };
 
 	int infiniteWhileVariable = 1;
 	while (infiniteWhileVariable == 1) {
@@ -131,6 +153,11 @@ int main() {
 				}
 				else if (optionMenu2 == 'b') {
 					system("cls");
+					for (int i = 0; i < 2; i++) {
+						showRoomInfo(roomArray[i]);
+						
+					}
+					system("pause");
 				}
 				else if (optionMenu2 == 'c') {
 					system("cls");

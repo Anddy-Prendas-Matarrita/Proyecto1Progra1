@@ -3,10 +3,10 @@
 Room::Room() {
 
 }
-Room::Room(int _number, int _amountOfSeats, int _price) {
+Room::Room(int _number, int _price, std::string _kind) {
 	number = _number;
-	amountOfSeats = _amountOfSeats;
 	price = _price;
+	kind = _kind;
 	int aux = 0;
 	for (int f = 0; f < 7; f++) {
 		for (int c = 0; c < 7; c++) {
@@ -28,6 +28,12 @@ Room::Room(int _number, int _amountOfSeats, int _price) {
 }
 Room::~Room() {
 	
+}
+void Room::setKind(std::string _kind) {
+	kind = _kind;
+}
+std::string Room::getKind() {
+	return kind;
 }
 void Room::showMatrix()
 {
@@ -54,6 +60,7 @@ void Room::setAmountOfSeats(int _amountOfSeats) {
 	amountOfSeats = _amountOfSeats;
 }
 int Room::getAmountOfSeats() {
+	
 	return amountOfSeats;
 }
 void Room::setPrice(int _price) {
