@@ -2,12 +2,13 @@
 Movie::Movie() {
 
 }
-Movie::Movie(std::string _name, int _year, int _duration, std::string _country, int _review) {
+Movie::Movie(std::string _name, int _year, int _duration, std::string _country, float _review, int _idMovie) {
 	name = _name;
 	year = _year;
 	duration = _duration;
 	country = _country;
 	review = _review;
+	idMovie = _idMovie;
 }
 Movie::~Movie() {
 
@@ -40,6 +41,12 @@ std::string Movie::getCountry() {
 void Movie::setReview(int _review) {
 	review = _review;
 }
- int Movie::getReview() {
+ float Movie::getReview() {
 	return review;
 }
+ void Movie::setIdMovie(int _idMovie) {
+	 idMovie = _idMovie;
+ }
+ int Movie::getIdMovie() {
+	 return idMovie;
+ }

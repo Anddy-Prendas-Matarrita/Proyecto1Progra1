@@ -60,7 +60,6 @@ void Room::setAmountOfSeats(int _amountOfSeats) {
 	amountOfSeats = _amountOfSeats;
 }
 int Room::getAmountOfSeats() {
-	
 	return amountOfSeats;
 }
 void Room::setPrice(int _price) {

@@ -11,8 +11,9 @@ private:
 	std::string date;
 	std::string startTime;
 	std::string endTime;
+	int idSchedule;
 public:
-	Schedule(Movie,Room,std::string,std::string,std::string);
+	Schedule(Movie,Room,std::string,std::string,std::string, int);
 	~Schedule();
 	void showSeats();
 	void setSMovie(Movie);
@@ -26,5 +27,8 @@ public:
 	int getRoomNum();
 	std::string getMovieName();
 	int getRoomPrice();
+	int getIdMovie();
+	void setIdSchedule(int);
+	int getIdSchedule();
 };
 #endif MOVIE_H

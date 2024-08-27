@@ -1,11 +1,12 @@
 #include "Schedule.h"
 
-Schedule::Schedule(Movie _selectedMovie, Room _selectedRoom, std::string _date, std::string _startTime, std::string _endTime) {
+Schedule::Schedule(Movie _selectedMovie, Room _selectedRoom, std::string _date, std::string _startTime, std::string _endTime, int _idSchedule) {
 	selectedMovie = _selectedMovie;
 	selectedRoom = _selectedRoom;
 	date = _date;
 	startTime = _startTime;
 	endTime = _endTime;
+	idSchedule = _idSchedule;
 }
 Schedule::~Schedule() {
 
@@ -32,4 +33,13 @@ std::string Schedule::getMovieName() {
 }
 int Schedule::getRoomPrice() {
 	return selectedRoom.getPrice();
+}
+int Schedule::getIdMovie() {
+	return selectedMovie.getIdMovie();
+}
+void Schedule::setIdSchedule(int _idSchedule) {
+	idSchedule = _idSchedule;
+}
+int Schedule::getIdSchedule() {
+	return idSchedule;
 }
