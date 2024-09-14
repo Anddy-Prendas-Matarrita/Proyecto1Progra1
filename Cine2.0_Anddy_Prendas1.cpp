@@ -52,12 +52,12 @@ int main() {
 	while (infiniteWhileVariable == 1) {
 
 		char optionMenu;
-		std::cout << "\nBienvenidos al sistema de compra de tickets de Anddy s Cinema\n\n";
-		std::cout << "a. Archivo\n";
-		std::cout << "b. Mantenimiento\n";
-		std::cout << "c. Reserva\n";
-		std::cout << "d. Venta\n";
-		std::cout << "Opcion: ";
+		std::cout << "---------------------------------------------\n|Bienvenidos al sistema de compra de tickets|\n---------------------------------------------\n";
+		std::cout << "|a. >Archivo<                               |\n";
+		std::cout << "|b. >Mantenimiento<                         |\n";
+		std::cout << "|c. >Reserva<                               |\n";
+		std::cout << "|d. >Venta<                                 |\n";
+		std::cout << "---------------------------------------------\nOpcion: ";
 		std::cin >> optionMenu;
 		std::cout << "\n";
 
@@ -66,19 +66,20 @@ int main() {
 			int menuVariable1 = 1;
 			while (menuVariable1 == 1) {
 				char optionMenu1;
-				std::cout << "\na. Acerca de\n";
-				std::cout << "b. Salir\n";
+				system("cls");
+				std::cout << "---------------------------------------------\n|a. >Acerca de<                             |\n";
+				std::cout << "|b. >Salir<                                 |\n---------------------------------------------\n";
 				std::cout << "Opcion: ";
 				std::cin >> optionMenu1;
 
 				if (optionMenu1 == 'a') {
 					system("cls");
-					std::cout << "\nAnddy Elih Prendas Matarrita\nEstudiante apasionado por la programacion y fundador Anddy s Cinema en 2024\n";
+					std::cout << "---------------------------------------------\n|Anddy Elih Prendas Matarrita                |\n|Estudiante apasionado por la programacion y |\n|creador de este sistema de compra de tickets|\n---------------------------------------------";
+					system("pause");
 				}
 				else if (optionMenu1 == 'b') {
 					system("cls");
 					menuVariable1 = 0;
-					std::cout << "Has salido";
 				}
 				else {
 					system("cls");
@@ -203,7 +204,9 @@ int main() {
 					int bookMovie;
 					int bookRoom;
 					int bookSchedule;
-					std::cout << "\nSeleccione la pelicula que desea ver de las siguientes\n\n";
+					int idBook;
+					int bookSeat;
+					std::cout << "\nSeleccione la pelicula que desea ver de las siguientes\n-------------------------------------------------------\n";
 					for (int i = 0; i < 4; i++) {
 						int number = i+1;
 						std::cout << number << ". " << moviesVector[i].getName()<<"\n";
@@ -212,7 +215,7 @@ int main() {
 					std::cin >> bookMovie;
 					
 						
-					std::cout << "\nLista de salas en la que está disponible\n ";
+					std::cout << "\nSeleccione la sala en la que desea ver la pelicula\n ";
 					for (int i = 0; i < 9; i++) {
 						if (bookMovie==scheduleArray[i].getIdMovie()) {
 							std::cout << "Sala " << scheduleArray[i].getRoomNum()<<"\n";
@@ -220,8 +223,8 @@ int main() {
 					}
 					std::cout << "\nOpcion: ";
 					std::cin >> bookRoom;
-
-					std::cout << "\nSeleccione el horario en el que desea reservar\n";
+					
+					std::cout << "\nSeleccione el horario en el que desea reservar (por numero de identificacion\n";
 					for (int i = 0; i < 9; i++) {
 						
 						if (bookRoom==scheduleArray[i].getRoomNum() and bookMovie==scheduleArray[i].getIdMovie()) {
@@ -229,7 +232,24 @@ int main() {
 							std::cout << "\nDe " << scheduleArray[i].getStartTime() << " a " << scheduleArray[i].getStartTime();
 						}
 					}
-
+					std::cout << "\nEscriba el ID: ";
+					std::cin >> idBook;
+					system("cls");
+					for (int i = 0; i < 9; i++) {
+						if (idBook == scheduleArray[i].getIdSchedule()) {
+							
+							std::cout << "La lista de asientos es la siguiente:\n\n";
+							scheduleArray[i].getRoom().showMatrix();
+						}
+					}
+					std::cout << "\nDigite el numero de asiento que desea reservar: ";
+					std::cin>> bookSeat;
+					for (int i = 0; i < 9; i++) {
+						if (bookRoom == scheduleArray[i].getRoomNum() and bookMovie == scheduleArray[i].getIdMovie() and idBook == scheduleArray[i].getIdSchedule()) {
+							scheduleArray[i].getRoom().setBoolMatrix(bookSeat);
+						}
+					}
+					
 					//termina funcion
 				}
 				else if (optionMenu3 == 'b') {
@@ -254,7 +274,25 @@ int main() {
 				std::cin >> optionMenu4;
 				if (optionMenu4 == 'a') {
 					system("cls");
-					//venta
+					int userConsecutive;
+					long idPersonal;
+					long payCard;
+					std::cout << "Digite su consecutivo para proceder con el pago: ";
+					std::cin >> userConsecutive;
+					for (int i = 0; i < 9; i++) {
+						if (scheduleArray[i].getRoom().getConsecutive() == userConsecutive) {
+							std::cout << "El monto a pagar es: " << scheduleArray[i].getRoom().getPrice()<<" colones"<<"\nDigite su numero de tarjeta: ";
+							std::cin >> payCard;
+							system("cls");
+							std::cout << "\nDigite su numero de cedula: ";
+							std::cin >> idPersonal;
+							system("cls");
+							std::cout << "\nSe ha concluido con el pago. Muchas gracias por su compra";
+						}
+						else {
+
+						}
+					}
 				}
 				else if (optionMenu4 == 'b') {
 					system("cls");

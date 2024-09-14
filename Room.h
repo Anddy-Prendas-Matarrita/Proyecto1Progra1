@@ -9,6 +9,7 @@ private:
 	int price;
 	Seat seats[7][7];
 	std::string kind;
+	int consecutive;
 	
 public:
 	Room();
@@ -23,5 +24,7 @@ public:
 	int getAmountOfSeats();
 	void setPrice(int);
 	int getPrice();
+	void setBoolMatrix(int);
+	int getConsecutive();
 };
 #endif ROOM_H

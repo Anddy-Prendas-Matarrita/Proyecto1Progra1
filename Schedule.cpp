@@ -14,7 +14,9 @@ Schedule::~Schedule() {
 void Schedule::showSeats(){
 	selectedRoom.showMatrix();
 }
-
+Room Schedule::getRoom() {
+	return selectedRoom;
+}
 std::string Schedule::getDate() {
 	return date;
 }

@@ -16,6 +16,7 @@ public:
 	Schedule(Movie,Room,std::string,std::string,std::string, int);
 	~Schedule();
 	void showSeats();
+	Room getRoom();
 	void setSMovie(Movie);
 	void setSRoom(Room);
 	void setDate(std::string);
