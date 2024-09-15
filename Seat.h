@@ -5,6 +5,7 @@ class Seat {
 private:
 	int number;
 	bool busy = false;
+	
 public:
 	Seat();
 	Seat(int);

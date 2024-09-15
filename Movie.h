@@ -9,10 +9,11 @@ private:
 	int year;
 	int duration;
 	std::string country;
-	int review;
+	float review;
+	int idMovie;
 public:
 	Movie();
-	Movie(std::string, int, int, std::string, int);
+	Movie(std::string, int, int, std::string, float,int);
 	~Movie();
 	void setName(std::string);
 	std::string getName();
@@ -23,6 +24,8 @@ public:
 	void setCountry(std::string);
 	std::string getCountry();
 	void setReview(int);
-	int getReview();
+	float getReview();
+	void setIdMovie(int);
+	int getIdMovie();
 };
 #endif MOVIE_H
