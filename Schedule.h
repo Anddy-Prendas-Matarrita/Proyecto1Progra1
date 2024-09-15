@@ -23,5 +23,17 @@ public:
 	std::string getDate();
 	std::string getStartTime();
 	std::string getEndTime();
+<<<<<<< HEAD
+=======
+	int getRoomNum();
+	std::string getMovieName();
+	int getRoomPrice();
+	int getIdMovie();
+	void setIdSchedule(int);
+	int getIdSchedule();
+	void generateConsecutiveRoom();
+	void book(int);
+	int getConsecutive();
+>>>>>>> 175685f (Se completó el proyecto)
 };
 #endif MOVIE_H

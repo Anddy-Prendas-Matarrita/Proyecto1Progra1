@@ -16,9 +16,13 @@ public:
 	void showMatrix();
 	void setNumber(int);
 	int getNumber();
-	void setAmountOfSeats(int);
-	int getAmountOfSeats();
 	void setPrice(int);
 	int getPrice();
+<<<<<<< HEAD
+=======
+	void book(int);
+	void generateConsecutive();
+	int getConsecutive();
+>>>>>>> 175685f (Se completó el proyecto)
 };
 #endif ROOM_H

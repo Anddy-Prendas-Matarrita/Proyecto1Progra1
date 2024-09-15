@@ -22,4 +22,36 @@ std::string Schedule::getStartTime() {
 }
 std::string Schedule::getEndTime() {
 	return endTime;
+<<<<<<< HEAD
+=======
+}
+int Schedule::getRoomNum() {
+	int toReturn = selectedRoom.getNumber();
+	return toReturn;
+}
+std::string Schedule::getMovieName() {
+	return selectedMovie.getName();
+}
+int Schedule::getRoomPrice() {
+	return selectedRoom.getPrice();
+}
+int Schedule::getIdMovie() {
+	return selectedMovie.getIdMovie();
+}
+void Schedule::setIdSchedule(int _idSchedule) {
+	idSchedule = _idSchedule;
+}
+int Schedule::getIdSchedule() {
+	return idSchedule;
+}
+void Schedule:: generateConsecutiveRoom() {
+	selectedRoom.generateConsecutive();
+}
+void Schedule::book(int _bookSeat) {
+	selectedRoom.book(_bookSeat);
+	
+}
+int Schedule::getConsecutive() {
+	return selectedRoom.getConsecutive();
+>>>>>>> 175685f (Se completó el proyecto)
 }
