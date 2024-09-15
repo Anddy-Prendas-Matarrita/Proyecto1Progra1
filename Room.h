@@ -20,11 +20,10 @@ public:
 	void showMatrix();
 	void setNumber(int);
 	int getNumber();
-	void setAmountOfSeats(int);
-	int getAmountOfSeats();
 	void setPrice(int);
 	int getPrice();
-	void setBoolMatrix(int);
+	void book(int);
+	void generateConsecutive();
 	int getConsecutive();
 };
 #endif ROOM_H

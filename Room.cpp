@@ -25,7 +25,6 @@ Room::Room(int _number, int _price, std::string _kind) {
 			}
 		}
 	}
-	consecutive = 10000 + rand() % 32767;
 }
 Room::~Room() {
 	
@@ -51,16 +50,16 @@ void Room::showMatrix()
 		std::cout << "\n";
 	}
 }
-void Room::setBoolMatrix(int _chosenSeat) {
+void Room::book(int _bookedSeat) {
 	for (int i = 0; i < 7;i++) {
 		for (int e = 0; e < 7; e++) {
-			if (seats[i][e].getNumber() == _chosenSeat and seats[i][e].getBusy()==false) {
+			if (seats[i][e].getNumber() == _bookedSeat and seats[i][e].getBusy()==false) {
 				seats[i][e].setBusy(true);
-				std::cout << "\nSu asiento ha sido reservado con exito, este es su consecutivo: "<<consecutive;
-
-
+				system("cls");
+				std::cout << "\nSu asiento ha sido reservado con exito, este es su consecutivo: "<<consecutive<<"\n\n";
+				system("pause");
 			}
-			else if (seats[i][e].getBusy() == true and seats[i][e].getNumber() == _chosenSeat) {
+			else if (seats[i][e].getBusy() == true and seats[i][e].getNumber() == _bookedSeat) {
 				std::cout << "\nEste asiento ya está reservado, intente con otro\n";
 			}
 		}
@@ -72,17 +71,16 @@ void Room::setNumber(int _number) {
 int Room::getNumber() {
 	return number;
 }
-void Room::setAmountOfSeats(int _amountOfSeats) {
-	amountOfSeats = _amountOfSeats;
-}
-int Room::getAmountOfSeats() {
-	return amountOfSeats;
-}
 void Room::setPrice(int _price) {
 	price = _price;
 }
 int Room::getPrice() {
 	return price;
+}
+void Room::generateConsecutive() {
+	int randNum;
+	randNum = (rand() % 32000) + 10000;
+	consecutive = randNum;
 }
 int Room::getConsecutive() {
 	return consecutive;

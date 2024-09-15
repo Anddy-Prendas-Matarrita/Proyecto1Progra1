@@ -31,5 +31,8 @@ public:
 	int getIdMovie();
 	void setIdSchedule(int);
 	int getIdSchedule();
+	void generateConsecutiveRoom();
+	void book(int);
+	int getConsecutive();
 };
 #endif MOVIE_H

@@ -45,3 +45,13 @@ void Schedule::setIdSchedule(int _idSchedule) {
 int Schedule::getIdSchedule() {
 	return idSchedule;
 }
+void Schedule:: generateConsecutiveRoom() {
+	selectedRoom.generateConsecutive();
+}
+void Schedule::book(int _bookSeat) {
+	selectedRoom.book(_bookSeat);
+	
+}
+int Schedule::getConsecutive() {
+	return selectedRoom.getConsecutive();
+}
